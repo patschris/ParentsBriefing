@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "school.hpp"
+#include "parent.hpp"
+#include "teacher.hpp"
+#include "list.hpp"
 #include "array.hpp"
 
 using namespace std;

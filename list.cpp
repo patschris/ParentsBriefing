@@ -1,9 +1,13 @@
 #include <iostream>
-#include "school.hpp"
+#include "parent.hpp"
+#include "teacher.hpp"
+#include "list.hpp"
 
 using namespace std;
 
-/* List's constructor */
+/* 
+ * List's constructor
+ */
 List::List(void) {
 	first = NULL;   // there is no node in the list
 }

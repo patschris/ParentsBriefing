@@ -1,6 +1,6 @@
 CC		= g++
 CFLAGS	= -g -Wall
-EXEC	= oop2
+EXEC	= parentsBriefing
 OBJS 	= main.o teacher.o parent.o list.o array.o
 SRCS 	= main.cpp teacher.cpp parent.cpp list.cpp array.cpp
 

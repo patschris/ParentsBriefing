@@ -1,17 +1,24 @@
 #include <iostream>
-#include "school.hpp"
+#include "parent.hpp"
+#include "teacher.hpp"
 
 using namespace std;
 
-Teacher::Teacher (int identity) : id (identity), parent(NULL) {
-    cout << "Teacher " << id << " constructed" << endl;
+/*
+ * Teacher's constructor
+ */
+Teacher::Teacher (int identity) : parent(NULL) {
+    id = identity;
 }
 
-Teacher::~Teacher (void) {
-    cout << "Teacher " << id << " destructed" << endl;
-}
+/*
+ * Teacher's destructor
+ */
+Teacher::~Teacher (void) {}
 
-/* check if a parent is available to inform a parent */
+/* 
+ * Check if a parent is available to inform a parent 
+ */
 bool Teacher::isAvailable (void) {
     return parent==NULL;
 }
