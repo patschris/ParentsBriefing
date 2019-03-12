@@ -36,5 +36,6 @@ Parent * Teacher::getParent (void) {
 }
 
 void Teacher::informParent (void) {
-    if (parent) parent->informedByTeacher(id);
+    if (parent) 
+        parent->informedByTeacher(id);
 }

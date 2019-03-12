@@ -10,10 +10,10 @@ using namespace std;
 
 int main (void) {
     
-    int i, j, N, K, L;
     List *l;
     Teacher **teachArray;
     Parent **parArray;
+    int i, j, N, K, L;
 
     /* Read from stdin */
     cout << "Please insert the amount of teachers: ";
@@ -22,11 +22,12 @@ int main (void) {
     cin >> K;
 
     srand (time(NULL));
-    L = rand() % (K-1) + 1; // random L
+    L = rand() % (K-1) + 1; // random first L parents
 
     /* Create N teachers */
     teachArray = new Teacher*[N];
-    for (i=0; i<N; i++) teachArray[i] = new Teacher(i+1);
+    for (i=0; i<N; i++) 
+        teachArray[i] = new Teacher(i+1);
     
     /* Create K parents */
     l = new List;
@@ -34,8 +35,10 @@ int main (void) {
     for (i=0; i<K; i++) {
         Parent *p = new Parent (i+1, N);
         p->subscribe();
-        if (i<L) l->insertEnd(p, false); // first L in the queue
-        else parArray[i-L] = p; // rest K-L will placed in the queue later
+        if (i<L) 
+            l->insertEnd(p, false); // first L in the queue
+        else 
+            parArray[i-L] = p; // rest K-L will be placed in the queue later
     }
     cout << "Initial queue of parents" << endl;
     l->print();
@@ -53,10 +56,7 @@ int main (void) {
                 if (!flag) counter++;
             }
         }
-        if (counter == N) {
-            cout << "Break condition" << endl;
-            break;
-        }
+        if (counter == N) break;
         // if other parents is waiting (parArray), add some of them in the queue
         if (rest>0) {
             int num = rand()%rest+1;
@@ -87,10 +87,12 @@ int main (void) {
 
     /* free memory */
     for (i=0; i<N; i++) 
-        if (teachArray[i]) delete teachArray[i];
+        if (teachArray[i]) 
+            delete teachArray[i];
     delete[] teachArray;
     for (i=0; i<K-L; i++) 
-        if (parArray[i]) delete parArray[i];
+        if (parArray[i]) 
+            delete parArray[i];
     delete[] parArray;
     delete l;
     return 0;
