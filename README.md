@@ -1,4 +1,4 @@
-# ParentsBriefing
+# Parents Briefing
 
 ## Description
 Simulation of a parent's briefing in secondary education. 
